@@ -1,0 +1,12 @@
+COMPUTER NETWORKS - PREVIOUS YEAR EXAM PAPER
+
+Section A
+Q1. Explain the seven layers of the OSI model and the function of each layer.
+Q2. Compare the OSI model with the TCP/IP model.
+Q3. Calculate the subnet mask and number of usable hosts for a /26 network in IP addressing and subnetting.
+Q4. Differentiate distance vector routing from link state routing algorithms.
+Q5. Explain TCP flow control and reliability using the three-way handshake and sliding window.
+Q6. Describe TCP congestion control with slow start and congestion avoidance.
+Q7. Distinguish between TCP and UDP with examples.
+Q8. Explain how DNS resolves a domain name.
+Q9. What is the difference between symmetric and asymmetric encryption? Explain firewalls.

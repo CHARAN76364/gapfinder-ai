@@ -1,0 +1,21 @@
+COMPUTER NETWORKS - COURSE SYLLABUS
+
+Unit 1: Network Models
+- OSI Model
+- TCP/IP Model
+
+Unit 2: Network Layer
+- IP Addressing and Subnetting
+- Routing Algorithms
+
+Unit 3: Transport Layer
+- TCP Flow Control and Reliability
+- TCP Congestion Control
+- UDP
+
+Unit 4: Application Layer
+- DNS
+- HTTP and HTTPS
+
+Unit 5: Network Security
+- Encryption and Firewalls

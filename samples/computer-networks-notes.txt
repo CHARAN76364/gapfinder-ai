@@ -1,0 +1,41 @@
+COMPUTER NETWORKS - STUDY NOTES
+
+UNIT 1: NETWORK MODELS
+
+OSI Model
+The OSI model is a conceptual framework that divides network communication into seven layers: Physical, Data Link, Network, Transport, Session, Presentation and Application. Each layer provides services to the layer above it and uses the services of the layer below it. The Physical layer transmits raw bits over a medium, while the Data Link layer provides node-to-node delivery using MAC addresses and detects frame errors. The Network layer is responsible for logical addressing and routing packets between networks. The Presentation layer handles data translation, encryption and compression, and the Session layer establishes, manages and terminates sessions between applications.
+
+TCP/IP Model
+The TCP/IP model is the practical protocol suite on which the Internet runs and it has four layers: Link, Internet, Transport and Application. The Internet layer uses the IP protocol to deliver packets across networks using best-effort delivery without guarantees. The Transport layer provides end-to-end communication through TCP or UDP. The Application layer of the TCP/IP model combines the Session, Presentation and Application layers of the OSI model into one layer. Unlike the OSI model, the TCP/IP model was developed around working protocols rather than as a theoretical reference.
+
+UNIT 2: NETWORK LAYER
+
+IP Addressing and Subnetting
+An IPv4 address is a 32-bit number written as four decimal octets, and it identifies a host interface on a network. A subnet mask separates the network portion of an address from the host portion. Subnetting divides a large network into smaller subnetworks, which reduces broadcast traffic and improves security. CIDR notation such as 192.168.1.0/24 states the number of bits used for the network prefix. A /24 network has 256 addresses, of which two are reserved for the network address and the broadcast address. IPv6 uses 128-bit addresses to solve the exhaustion of IPv4 addresses.
+
+Routing Algorithms
+Routers use routing algorithms to decide the best path for a packet to reach its destination. Distance vector routing, used by RIP, makes each router share its routing table with its neighbours and relies on the Bellman-Ford algorithm. Link state routing, used by OSPF, makes every router flood information about its links so that each router builds a complete map of the network. Each router then runs Dijkstra's algorithm to compute the shortest path tree. Distance vector protocols suffer from the count-to-infinity problem and converge slowly, whereas link state protocols converge faster but need more memory.
+
+UNIT 3: TRANSPORT LAYER
+
+TCP Flow Control and Reliability
+TCP is a connection-oriented protocol that provides reliable, ordered delivery of a byte stream. A connection is established with a three-way handshake using the SYN, SYN-ACK and ACK segments. TCP achieves reliability through sequence numbers, acknowledgements and retransmission of lost segments after a timeout. Flow control prevents a fast sender from overwhelming a slow receiver by using a sliding window, where the receiver advertises its available buffer space in the window size field. The connection is closed using FIN segments.
+
+TCP Congestion Control
+Congestion control prevents the sender from overloading the network itself rather than only the receiver. TCP maintains a congestion window called cwnd that limits how much unacknowledged data can be in flight. During slow start the congestion window doubles every round trip time until it reaches the slow start threshold called ssthresh. After the threshold is reached, congestion avoidance increases the window linearly by one segment per round trip. When packet loss is detected, TCP reduces ssthresh to half of the current window, which is the multiplicative decrease part of the AIMD strategy.
+
+UDP
+UDP is a connectionless transport protocol that offers a simple, low-overhead service without reliability, ordering or flow control. A UDP header is only eight bytes long and contains the source port, destination port, length and checksum. Because UDP does not perform a handshake or retransmission, it has lower latency than TCP. UDP is preferred for DNS queries, video streaming, online gaming and voice calls where speed matters more than perfect delivery. Applications that use UDP must handle any needed reliability themselves.
+
+UNIT 4: APPLICATION LAYER
+
+DNS
+The Domain Name System translates human-readable domain names into IP addresses. DNS is organised as a distributed hierarchy that begins at the root servers, continues to top-level domain servers and ends at authoritative name servers. A recursive resolver performs the lookup on behalf of the client and caches the answers to speed up later queries. Each DNS record has a time-to-live value that controls how long it may be cached. An A record maps a name to an IPv4 address, an AAAA record maps a name to an IPv6 address and an MX record identifies mail servers.
+
+HTTP and HTTPS
+HTTP is a stateless request-response protocol used by web browsers to fetch resources from servers. A client sends a request containing a method such as GET or POST, and the server replies with a status code such as 200 for success or 404 for not found. Because HTTP is stateless, servers use cookies to remember users between requests. HTTPS is HTTP carried over TLS, which provides encryption, server authentication and integrity protection. HTTPS uses port 443, while plain HTTP uses port 80.
+
+UNIT 5: NETWORK SECURITY
+
+Encryption and Firewalls
+Symmetric encryption uses a single shared secret key for both encryption and decryption and it is fast, as in the AES algorithm. Asymmetric encryption uses a public key and a private key pair, as in the RSA algorithm, and it solves the problem of key distribution. A digital signature uses the sender's private key so that anyone can verify authenticity with the public key. A firewall filters incoming and outgoing traffic according to security rules. A packet-filtering firewall inspects packet headers, while a stateful firewall also tracks the state of active connections.
